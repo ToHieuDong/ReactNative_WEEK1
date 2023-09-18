@@ -1,0 +1,60 @@
+Câu hỏi lập trình #1
+Chúng tôi đang xây dựng ứng dụng cá cược bóng đá (bóng đá Mỹ gọi là bóng đá bàn)! Giả sử chúng tôi nhận dữ liệu từ dịch vụ web về một trò chơi cụ thể ('game' biến ở trang tiếp theo). Trong thách thức này, chúng ta sẽ làm việc với dữ liệu đó.
+Các nhiệm vụ của bạn:
+
+Tạo một mảng cầu thủ cho mỗi đội (biến 'players1' và 'players2')
+Cầu thủ đầu tiên trong bất kỳ mảng cầu thủ nào là thủ môn và những người còn lại là cầu thủ sân. Đối với Bayern Munich (đội 1), tạo một biến ('gk') với tên thủ môn và một mảng ('fieldPlayers') với tất cả 10 cầu thủ sân còn lại
+Tạo một mảng 'allPlayers' chứa tất cả cầu thủ của cả hai đội (22 cầu thủ)
+Trong trận đấu, Bayern Munich (đội 1) đã sử dụng 3 cầu thủ dự bị. Vì vậy, tạo một mảng mới ('players1Final') chứa tất cả cầu thủ gốc của đội 1 cộng với 'Thiago', 'Coutinho' và 'Perisic'
+Dựa trên đối tượng 'game.odds', tạo một biến cho mỗi tỷ lệ cược (gọi là 'team1', 'draw' và 'team2')
+Viết một hàm ('printGoals') nhận một số lượng tên cầu thủ tùy ý (không phải là một mảng) và in từng tên lên console, cùng với số bàn thắng đã được ghi tổng cộng (số tên cầu thủ được truyền vào)
+Đội có tỷ lệ cược thấp hơn có khả năng thắng cao hơn. In lên console đội nào có khả năng thắng cao hơn, mà không sử dụng câu lệnh if/else hoặc toán tử ba ngôi.
+Dữ liệu thử nghiệm cho 6: Đầu tiên, sử dụng các cầu thủ 'Davies', 'Muller', 'Lewandowski' và 'Kimmich'.
+Sau đó, gọi lại hàm với các cầu thủ từ 'game.scored'
+Câu hỏi lập trình #2
+Tiếp tục với ứng dụng cá cược bóng đá của chúng tôi! Tiếp tục sử dụng biến 'game' từ trước đó.
+Nhiệm vụ của bạn:
+
+Lặp qua mảng 'game.scored' và in tên của mỗi cầu thủ lên console, cùng với số bàn thắng (Ví dụ: "Bàn thắng 1: Lewandowski")
+Sử dụng một vòng lặp để tính trung bình tỷ lệ cược và ghi nó lên console (Chúng tôi đã học cách tính trung bình, bạn có thể kiểm tra nếu bạn không nhớ)
+In 3 tỷ lệ cược lên console, nhưng cách định dạng đẹp, chính xác như sau:
+Tỷ lệ chiến thắng của Bayern Munich: 1.33
+Tỷ lệ hòa: 3.25
+Tỷ lệ chiến thắng của Borrussia Dortmund: 6.5
+Lấy tên đội trực tiếp từ đối tượng 'game', không mã hóa cứng chúng (ngoại trừ "hòa"). Gợi ý: Lưu ý rằng tỷ lệ cược và đối tượng 'game' có cùng tên thuộc tính
+Thêm điểm: Tạo một đối tượng gọi là 'scorers' chứa tên của những người chơi đã ghi bàn là các thuộc tính và số bàn thắng là giá trị. Trong trò chơi này, nó sẽ trông như thế này:
+{
+Gnarby: 1,
+Hummels: 1,
+Lewandowski: 2
+}
+Câu hỏi lập trình #3
+Tiếp tục với ứng dụng cá cược bóng đá của chúng tôi! Lần này, chúng ta có một bản đồ được gọi là 'gameEvents' (xem bên dưới) với một bản ghi về các sự kiện đã diễn ra trong trận đấu. Các giá trị là các sự kiện chính họ và các khóa là các phút mà mỗi sự kiện diễn ra (trận đấu bóng đá kéo dài 90 phút cộng thêm một thời gian bù giờ).
+Nhiệm vụ của bạn:
+
+Tạo một mảng 'events' của các sự kiện trò chơi khác nhau đã xảy ra (không có sự trùng lặp)
+Sau khi trận đấu kết thúc, phát hiện rằng thẻ vàng từ phút 64 là không công bằng. Vì vậy, hãy loại bỏ sự kiện này khỏi nhật ký sự kiện trò chơi.
+Tính toán và ghi vào console chuỗi sau đây: "Trung bình, mỗi 9 phút đã xảy ra một sự kiện" (hãy nhớ rằng một trận đấu kéo dài 90 phút)
+Lặp qua 'gameEvents' và ghi mỗi phần tử vào console, đánh dấu xem nó có ở hiệp 1 hay hiệp 2 (sau 45 phút) của trận đấu, giống như sau:
+[HIỆP 1] 17: ⚽ BÀN THẮNG
+Câu hỏi lập trình #4
+Viết một chương trình nhận danh sách tên biến viết bằng dấu gạch dưới và chuyển chúng thành dạng camelCase.
+Đầu vào sẽ đến từ một textarea được chèn vào DOM (xem mã dưới đây để chèn các phần tử), và việc chuyển đổi sẽ xảy ra khi nút được nhấn.
+Dữ liệu thử nghiệm (dán vào textarea, bao gồm cả khoảng trắng):
+underscore_case
+first_name
+Some_Variable
+calculate_AGE
+delayed_departure
+Nên tạo ra đầu ra như sau (5 đầu ra console.log riêng biệt):
+underscoreCase ✅
+firstName ✅✅
+someVariable ✅✅✅
+calculateAge ✅✅✅✅
+delayedDeparture ✅✅✅✅✅
+Gợi ý:
+§ Hãy nhớ ký tự nào định nghĩa một dòng mới trong textarea
+§ Giải pháp chỉ cần hoạt động cho một biến được tạo từ 2 từ, giống như a_b
+§ Hãy bắt đầu mà không quan tâm đến biểu tượng ✅. Xử lý nó sau khi bạn đã có chuyển đổi tên biến hoạt động
+§ Thách thức này khó một cách có chủ đích, vì vậy hãy bắt đầu xem giải pháp nếu bạn gặp khó khăn. Sau đó tạm dừng và tiếp tục!
+Sau đó, thử nghiệm với dữ liệu thử nghiệm của riêng bạn!

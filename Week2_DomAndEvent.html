@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20046761_ToHieuDong</title>
+    
+</head>
+<body>
+    <h1>Game ABC</h1>
+    <p>Chọn một số từ 1-20</p>
+    <p class="message">Bắt đầu đoán....</p>
+    <p class="score">20</p>
+    <input type="text" class="guess">
+    <button class="check">Check!</button>
+    <button class="again">Again!</button>
+    <script>
+        
+        let secretNumber = Math.trunc(Math.random() * 20) + 1;
+        let score = 20;
+        document.querySelector('.check').addEventListener('click', function(){
+            const guess = Number(document.querySelector('.guess').value);
+            console.log(guess, typeof guess);
+            if(!guess){
+                document.querySelector('.message').textContent = 'Chưa có số được nhập!';
+            }else if(guess === secretNumber){
+                document.querySelector('.message').textContent = 'Đoán chính xác!';
+                document.querySelector('.number').textContent = secretNumber;
+                document.querySelector('body').style.backgroundColor = '#60b347';
+                document.querySelector('.number').style.width = '30rem';
+            }else if(guess > secretNumber){
+                if(score > 1){
+                    document.querySelector('.message').textContent = 'Số lớn hơn kết quả mong muốn!';
+                    score--;
+                    document.querySelector('.score').textContent = score;
+                }else{
+                    document.querySelector('.message').textContent = 'Bạn Thua!';
+                    document.querySelector('.score').textContent = 0;
+                }
+            }else if(guess < secretNumber){
+                if(score > 1){
+                    document.querySelector('.message').textContent = 'Số bé hơn kết quả mong muốn!';
+                    score--;
+                    document.querySelector('.score').textContent = score;
+                }else{
+                    document.querySelector('.message').textContent = 'Bạn thua!';
+                    document.querySelector('.score').textContent = 0;
+                }
+            }
+        });
+    
+        document.querySelector('.again').addEventListener('click', function(){
+            score = 20;
+            secretNumber = Math.trunc(Math.random() * 20) + 1;
+            document.querySelector('.message').textContent = 'Bắt đầu đoán...';
+            document.querySelector('.score').textContent = score;
+            document.querySelector('.number').textContent = '?'; 
+            document.querySelector('.guess').value = '';
+            document.querySelector('body').style.backgroundColor = '#222';
+            document.querySelector('.number').style.width = '15rem';
+        
+        });
+    </script>
+
+
+</body>
+</html>
+
+<!-- Coding Challenge #1
+Implement a game rest functionality, so that the player can make a new guess!
+Your tasks:
+1. Select the element with the 'again' class and attach a click event handler
+2. In the handler function, restore initial values of the 'score' and
+'secretNumber' variables
+3. Restore the initial conditions of the message, number, score and guess input
+fields
+4. Also restore the original background color (#222) and number width (15rem)
+ -->
+ <!-- Thử thách viết mã số 1 -->
+    <!-- Thực hiện chức năng nghỉ trò chơi, để người chơi có thể đoán lại!
+    Các nhiệm vụ của bạn:
+    1. Chọn phần tử với lớp 'again' và gắn một trình xử lý sự kiện nhấp chuột
+    2. Trong hàm xử lý, khôi phục các giá trị ban đầu của các biến 'score' và 'secretNumber'
+    3. Khôi phục các điều kiện ban đầu của các trường thông báo, số, điểm và đầu vào đoán
+    4. Cũng khôi phục màu nền ban đầu (# 222) và chiều rộng số (15rem) -->
+    
+
+
+
+ 
